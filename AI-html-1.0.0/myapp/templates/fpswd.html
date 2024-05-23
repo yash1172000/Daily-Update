@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Video</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/login-signup.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/forgot-pass.css' %}" rel="stylesheet" />
+  </head>
+
+  <body background="" id="forgot-pass">
+    <!-- Contact Start -->
+    <div class="container-fluid sticky-top forgot-pass-header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+          <a href="{% url 'index' %}" class="navbar-brand">
+            <h1 class="text-white">AI<span class="text-white">.</span>Video</h1>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Contact Start -->
+    <div class="container-fluid flex py-5 forgot-pass-main">
+      <div class="container max-width">
+        <div
+          class="mx-auto text-center wow fadeIn"
+          data-wow-delay="0.1s"
+          style="max-width: 500px"
+        >
+          <h1 class="margin-top text-white ctm-text">
+            Welcome to <span>AI Video</span>
+          </h1>
+          <div class="login-heading text-white ctm-text">
+            <span>Forgot Password</span>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-7 width-inc">
+            <div class="wow fadeIn" data-wow-delay="0.3s">
+              {% if msg %}
+              <p style="color: green">{{msg}}</p>
+              {% elif msg1 %}
+              <p style="color: red">{{msg1}}</p>
+              {% else %}
+              <p style="color: red"></p>
+              {% endif %}
+              <form action="{% url 'fpswd' %}" method="post">
+                {% csrf_token %}
+                <div class="row g-3 fl-cl">
+                  <div class="col-md-6 full-width">
+                    <div class="form-floating custom-form">
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Your Email"
+                      />
+                      <label for="email">Your Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary-ct w-100 py-3" type="submit">
+                      Forgot Password
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- login side video part -->
+      <div class="c-PJLV c-fBjWAM">
+        <h1 class="c-PJLV c-bOhtCq ctm-text">
+          Idea to <span>Slideshow</span> video
+        </h1>
+        <div class="c-PJLV c-fcUyPF">
+          With AI Video, you can turn any content or idea into video, instantly
+          ðŸš€
+        </div>
+        <div class="c-PJLV c-fMHNgW">
+          <video
+            id="videoPlayer"
+            poster=""
+            class="c-cVPNsh"
+            autoplay
+            loop
+            muted
+          >
+            <source src="{% static 'video/login-signup-video.mp4' %}" />
+          </video>
+          <div class="video-btn">
+            <button id="playButton">
+              <svg
+                class="play-btn"
+                width="240"
+                height="240"
+                viewBox="0 0 240 240"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  position: relative;
+                  z-index: 50;
+                  border-radius: 50%;
+                  background-image: linear-gradient(
+                    90deg,
+                    #0a6a9d 0%,
+                    #10bddb 100%
+                  );
+                "
+              >
+                <g filter="url(#filter0)">
+                  <rect
+                    width="240"
+                    height="240"
+                    rx="120"
+                    fill="black"
+                    fill-opacity="0"
+                  ></rect>
+                  <path
+                    d="M90.3902 68.9124C89.0527 68.1402 87.3809 69.1055 87.3809 70.6499V177.321C87.3809 178.865 89.0527 179.83 90.3902 179.058L182.77 125.723C184.107 124.95 184.107 123.02 182.77 122.248L90.3902 68.9124Z"
+                    fill="white"
+                  ></path>
+                </g>
+                <defs>
+                  <filter
+                    id="filter0"
+                    x="-160"
+                    y="-160"
+                    width="560"
+                    height="560"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood
+                      flood-opacity="0"
+                      result="BackgroundImageFix"
+                    ></feFlood>
+                    <feGaussianBlur
+                      in="BackgroundImageFix"
+                      stdDeviation="80"
+                    ></feGaussianBlur>
+                    <feComposite
+                      in2="SourceAlpha"
+                      operator="in"
+                      result="effect1_backgroundBlur_784_242613"
+                    ></feComposite>
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_backgroundBlur_784_242613"
+                      result="shape"
+                    ></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+            </button>
+            <button id="pauseButton">
+              <svg
+                class="pause-btn"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+                width="240"
+                height="240"
+                viewBox="0 0 240 240"
+                fill="none"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  position: relative;
+                  z-index: 50;
+                  border-radius: 50%;
+                  background-image: linear-gradient(
+                    90deg,
+                    #0a6a9d 0%,
+                    #10bddb 100%
+                  );
+                "
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill="#fff"
+                    d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm-96-544q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32zm192 0q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32z"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // Get the video and button elements
+        const video = document.getElementById("videoPlayer");
+        const playButton = document.getElementById("playButton");
+        const pauseButton = document.getElementById("pauseButton");
+
+        // Play video when the play button is clicked
+        playButton.addEventListener("click", function () {
+          video.play();
+          playButton.style.display = "none";
+          pauseButton.style.display = "block";
+        });
+
+        // Pause video when the pause button is clicked
+        pauseButton.addEventListener("click", function () {
+          video.pause();
+          pauseButton.style.display = "none";
+          playButton.style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<body class="login-signup">
+    <link href="{% static 'css/login-signup.css' %}" rel="stylesheet">
+    <div class="container-fluid flex py-5 signup-page-container">
+      <div class="container max-width py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+          <h1 class="margin-top ctm-text"> Welcome to <span>AI Video</span>
+          </h1>
+          <div class="login-heading text-white ctm-text my-3">
+            <span>SignUp</span>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-7 width-inc">
+            <!-- <p class="text-center text-white mb-4">It generates a script, creates scenes, adds voiceovers, & tweaks the video at your command. With invideo AI as your co-pilot, engaging your audience is effortlessly simple!</p> -->
+            <div class="wow fadeIn" data-wow-delay="0.3s"> {% if msg %} <p style="color: green;">{{msg}}</p> {% elif msg1 %}
+              <!-- <div id="toastContainer-msg" class="toastContainer"><span id="close"><button id="closebtn" onclick="closetoast()">&times;</button></span><p id="toastMessage-msg">{{msg1}}</p></div> -->
+              <p class="redirect-login" style="color: red;">{{msg1}}</p> {% else %} <p style="color: red;"></p> {% endif %} 
+              <form action="{% url 'signup' %}" method="post" onsubmit="return validateForm()"> 
+                {% csrf_token %} 
+                  <div class="row g-3 fl-cl d-flex flex-column gap-3">
+                  <div class="col-md-6 full-width m-0">
+                    <div class="form-floating custom-form">
+                      <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required="True">
+                      <label for="email">Your Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12 m-0">
+                    <button class="btn btn-primary-ct w-100 py-3 m-0" type="submit">Create Account</button>
+                  </div>
+                  <a href="{% url 'login' %}" class="full-width text-center lnk m-0">
+                    <span>Have an account? </span>Login </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- video part in signup page -->
+      <div class="c-PJLV c-fBjWAM px-2">
+        <h1 class="c-PJLV c-bOhtCq ctm-text"> Idea to <span>Slideshow</span> video </h1>
+        <div class="c-PJLV c-fcUyPF">With AI Video, you can turn any content or idea into video, instantly 🚀</div>
+        <div class="c-PJLV c-fMHNgW">
+          <video id="videoPlayer" poster="" class="c-cVPNsh" autoplay loop muted>
+            <source src="{% static 'video/login-signup-video.mp4' %}">
+          </video>
+          <div class="video-btn">
+            <button id="playButton">
+              <svg class="play-btn" width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px; position: relative; z-index: 50; border-radius: 50%; background-image: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);">
+                <g filter="url(#filter0)">
+                  <rect width="240" height="240" rx="120" fill="black" fill-opacity="0"></rect>
+                  <path d="M90.3902 68.9124C89.0527 68.1402 87.3809 69.1055 87.3809 70.6499V177.321C87.3809 178.865 89.0527 179.83 90.3902 179.058L182.77 125.723C184.107 124.95 184.107 123.02 182.77 122.248L90.3902 68.9124Z" fill="white"></path>
+                </g>
+                <defs>
+                  <filter id="filter0" x="-160" y="-160" width="560" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="80"></feGaussianBlur>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_784_242613"></feComposite>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_784_242613" result="shape"></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+            </button>
+            <button id="pauseButton">
+              <svg class="pause-btn" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none" style="width: 100px; height: 100px; position: relative; z-index: 50; border-radius: 50%; background-image: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path fill="#fff" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm-96-544q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32zm192 0q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32z"></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/login-signup.js' %}"></script>
+  </body>
+{% endblock %}

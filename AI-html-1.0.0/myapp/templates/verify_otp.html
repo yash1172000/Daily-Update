@@ -1,0 +1,128 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<body class="login-signup otp-page">
+    <link href="{% static 'css/login-signup.css' %}" rel="stylesheet">
+    <!-- Contact Start -->
+    <div class="alert alert-success alert-ct-success" role="alert" style="display: none;">
+    </div>
+    <div class="alert alert-danger alert-ct-error" role="alert" style="display: none;">
+    </div>
+    <div class="container-fluid flex py-5 signup-wrapper">
+        <div class="container otp-container max-width">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="margin-top text-white ctm-text"><span>Verify Otp</span></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7 width-inc">
+                    <p class="text-center mb-4"></p>
+                    <div class="wow fadeIn" data-wow-delay="0.3s">
+                    {% if msg %}
+                        <p style="color: green;">{{msg}}</p>
+                    {% elif msg1 %}
+                        <p style="color: red;">{{msg1}}</p>
+                    {% else %}
+                        <p style="color: red;"></p>
+                    {% endif %}
+                        <form action="{% url 'verify_otp' %}" method="post">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                            <div>
+                                <input type='hidden' name='email' value='{{email}}' />
+                            </div>
+                            <div>
+                                <input type='hidden' name='uotp' value='{{otp}}' class="otp-resend-otp" />
+                            </div>
+                                <div class="">
+                                    <div class="form-floating custom-form">
+                                        <input style="background-color: transparent !important; border-radius: 5px;" type="text" name="otp" class="form-control" id="otp" placeholder="Your OTP" required="True">
+                                        <label for="otp">Your OTP</label>
+                                    </div>
+                                </div>
+                                <div class="static-mail-text">
+                                    Look for our email in your inbox or spam
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-ct w-100 py-3" type="submit">Verify OTP</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="otp-resend-wrapper">Didn't receive code? <span id="resend-code">Resend Code</span></div>
+                        <div class="otp-resend-wrapper text-center">Login with different email? <a class="url-text" href="/login">Login</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-PJLV c-fBjWAM">
+            <h1 class="c-PJLV c-bOhtCq ctm-text">
+                Idea to <span>Slideshow</span> video
+            </h1>
+            <div class="c-PJLV c-fcUyPF">With AI Video, you can turn any content or idea into video, instantly</div>
+            <div class="c-PJLV c-fMHNgW">
+                <video id="videoPlayer" poster="" class="c-cVPNsh" autoplay="" loop="" muted="">
+                    <source src="/static/video/login-signup-video.mp4">
+                </video>
+                <div class="video-btn">
+                    <button id="playButton">
+                        <svg class="play-btn" width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px; position: relative; z-index: 50; border-radius: 50%; background-image: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);">
+                            <g filter="url(#filter0)">
+                                <rect width="240" height="240" rx="120" fill="black" fill-opacity="0"></rect>
+                                <path d="M90.3902 68.9124C89.0527 68.1402 87.3809 69.1055 87.3809 70.6499V177.321C87.3809 178.865 89.0527 179.83 90.3902 179.058L182.77 125.723C184.107 124.95 184.107 123.02 182.77 122.248L90.3902 68.9124Z" fill="white"></path>
+                            </g>
+                            <defs>
+                                <filter id="filter0" x="-160" y="-160" width="560" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="80"></feGaussianBlur>
+                                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_784_242613"></feComposite>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_784_242613" result="shape"></feBlend>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </button>
+                    <button id="pauseButton">
+                        <svg class="pause-btn" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="240" height="240" fill="none" style="width: 100px; height: 100px; position: relative; z-index: 50; border-radius: 50%; background-image: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill="#fff" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm-96-544q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32zm192 0q32 0 32 32v256q0 32-32 32t-32-32V384q0-32 32-32z">
+                                </path>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/login-signup.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#resend-code').click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "{% url 'resend_code' %}",
+                    type: "POST",
+                    data: {
+                        email: "{{ email }}",
+                        csrfmiddlewaretoken: "{{ csrf_token }}"
+                    },
+                    success: function (response) {
+                        $(".alert-ct-success").html(response.message).show(500)
+                        $('.otp-resend-otp').val(response.new_otp);
+                        setTimeout(function () {
+                            $(".alert-ct-success").hide(500)
+                        }, 5000)
+                    },
+                    error: function (xhr, errmsg, err) {
+                        $(".alert-ct-error").html("Error: " + errmsg).show(500)
+                        setTimeout(function () {
+                            $(".alert-ct-error").hide(500)
+                        }, 5000)
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Contact End -->
+    </body>
+    {% endblock %}

@@ -1,0 +1,346 @@
+body {
+  font-family: Inter, sans-serif;
+  background-color: #000;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.onborad-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.onborad-main-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.onborad-main-first {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  /* padding: 10px; */
+}
+
+.onborad-main-second {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.onboard-inner {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  /* flex: 0 0 25%; */
+  max-width: 25%;
+  justify-content: start;
+  /* padding: 19px 8px; */
+}
+
+.onborad-firsticon {
+  position: relative;
+}
+
+.onborad-firsticon span {
+  color: #ffffff4d;
+  font-weight: 700;
+  font-size: 15.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff1a;
+  border-radius: 50%;
+  height: 22px;
+  width: 100%;
+  max-width: 22px;
+  min-width: 22px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  cursor: pointer;
+  border: none;
+}
+
+.col-12.onborad-main-button-main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.onborad-main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.col-12.onborad-main-button-main button.btn.btn-primary {
+  background-color: #009ff5;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Inter, sans-serif;
+  width: 300px;
+  height: 52px;
+  border-radius: 110px;
+  /* margin-top: 25px; */
+}
+
+button.btn.btn-primary.w-10.discover-our-project-button:hover {
+  background-color: #00b2ff;
+}
+
+.onborad-heading {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.onborad-heading h1 {
+  font-size: 32px;
+}
+
+form.out-mode-log-in .row.g-3.fl-cl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+
+form.out-mode-log-in .row.g-3.fl-cl .col-md-6.full-width {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.col-12.onborad-main-button-main-last button.btn.btn-primary.w-5.py-3 {
+  padding: 5px 24px !important;
+  border-radius: 30px;
+}
+
+.col-12.onborad-main-button-main-last {
+  display: flex;
+  justify-content: center;
+}
+
+.onborad-firsttext {
+  color: #ffffffd9;
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.onboard-inner.active .onborad-firsticon span {
+  background-color: #009ff5;
+  color: #fff;
+  border: none;
+}
+
+.onboard-inner.active .onborad-firsttext {
+  color: #00a0f5;
+}
+
+.onboard-inner svg {
+  visibility: hidden;
+}
+
+.onboard-inner.active svg {
+  visibility: visible;
+}
+
+.onborad-main form .form-control {
+  color: #ffffffd9;
+  padding: 13px 19px;
+  background: transparent;
+  width: 100%;
+  outline: 0;
+  border-radius: 5px;
+  border: 1px solid #ffffff59;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+@media only screen and (max-width: 768px) {
+  .onborad-heading h1 {
+    font-size: 28px;
+  }
+
+  .onborad-main-first,
+  .onborad-main-second {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .onborad-main-box {
+    row-gap: 0;
+  }
+
+  .onboard-inner {
+    /* flex: 0 0 50%; */
+    max-width: 50%;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .onborad-heading h1 {
+    font-size: 24px;
+  }
+
+  .onborad-main-first,
+  .onborad-main-second {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .onboard-inner {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
+
+  /* Custom css by BT */
+
+  .discover-our-project-wrapper {
+    .onborad-main {
+      row-gap: 10px;
+      padding: 0px 10px;
+
+      .onborad-heading h1 {
+        font-size: 18px;
+        color: #ffffff;
+      }
+    }
+
+    .onborad-main.best-describes-you {
+      .onborad-heading {
+        padding: 0 10px;
+      }
+
+    }
+
+    .onborad-main-box {
+      padding: 0px 10px;
+      align-items: center;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+
+      .onborad-main-first,
+      .onborad-main-second {
+        margin-left: 0;
+        margin-right: 0;
+
+        .onboard-inner {
+          column-gap: 20px;
+        }
+      }
+    }
+
+    .onborad-main-box {
+      .onborad-main-first {
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .onborad-main-second {
+        gap: 15px;
+      }
+
+      .onboard-inner {
+        .onborad-firsttext {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+/* Custom css by BT */
+
+@media screen and (min-width: 500px) {
+  .discover-our-project-wrapper {
+    .discover-our-project {
+      .onborad-main-box {
+        .onboard-inner {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .onboard-inner {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .onborad-main.best-describes-you {
+    .onborad-main-box {
+      padding: 0 20px;
+    }
+  }
+}
+
+/* */
+.best-describes-you .onborad-main-box .onboard-inner {
+  max-width: calc(100% / 3);
+  width: 100%;
+}
+
+.discover-our-project .onborad-main-box .onboard-inner {
+  max-width: calc(100% / 4);
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .best-describes-you .onborad-main-box {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .discover-our-project .onborad-main-box .onboard-inner {
+    max-width: calc(100% /3);
+  }
+
+  .best-describes-you .onborad-main-box {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .best-describes-you .onborad-main-box .onboard-inner {
+    max-width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .best-describes-you .onborad-main-box .onboard-inner,
+  .discover-our-project .onborad-main-box .onboard-inner {
+    max-width: calc(100% / 2);
+  }
+}

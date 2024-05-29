@@ -1,0 +1,837 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Video</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+  </head>
+<style type="text/css">
+.grid-child.particular-user-info {
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+.grid-child.particular-user-info table {
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+.grid-child.particular-user-info table tr td {
+  padding: 10px 20px;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+}
+.particular-tr {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.dark-ft {
+  font-weight: 600;
+  margin-right: 10px;
+  max-width: 100px;
+  width: 100%;
+  min-width: 100px;
+}
+.grid-child.particular-user-info table tr td ul {
+  display: flex;
+  gap: 15px;
+  padding-left: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.pd-2 {
+  padding-left: 2rem;
+}
+.all-user-click {
+  border: none !important;
+  color: #624bff;
+  cursor: pointer;
+}
+.main-container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  color: #212b36;
+}
+.first-container {
+  width: 20%;
+  background-color: #212b36;
+  padding: 10px 0px 0 30px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.second-container {
+  width: 80%;
+  background-color: #f1f5f9;
+  padding-bottom: 30px;
+}
+.text-white {
+  color: white;
+}
+.ft-lg {
+  font-size: 30px;
+  font-weight: 700;
+}
+.ft-md {
+  font-size: 18px;
+}
+.logo-wrapper-ad {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.side-bar-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.nav-wrapper {
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.profile-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(224, 220, 254);
+  border-radius: 20px;
+  position: relative;
+}
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  padding: 5px;
+  width: 150px;
+  right: 0;
+  background-color: #f1f5f9;
+  padding: 15px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 16px 3px rgba(0, 0, 0, 0.75);
+  display: none;
+}
+.profile-dropdown a {
+  color: #212b36;
+}
+.menubar-wrapper {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.heading-wrapper {
+  height: 200px;
+  background: #624bff;
+  padding: 50px;
+}
+.user-info-containers {
+  display: flex;
+  gap: 20px;
+  max-width: 95%;
+  margin: 0 auto;
+  position: relative;
+  top: -75px;
+}
+.info-container {
+  width: calc(100% / 3);
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+.info-container-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.count-number {
+  font-size: 35px;
+  font-weight: 700;
+}
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0dcfe !important;
+  border-radius: 8px;
+}
+.user-info-table,
+.total-video-name {
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.user-info-table table {
+  width: 100%;
+  background: white;
+  border-top: 1px solid lightgray;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+.user-info-table table tr td {
+  padding: 20px;
+}
+.user-info-table-heading {
+  padding: 20px;
+  background: #ffffff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-bottom: 0;
+  border-bottom: 1px solid lightgray;
+}
+.border-line {
+  border-bottom: 1px solid lightgray;
+}
+.user-info-table table tr td a,
+svg,
+.nav-wrapper .profile-wrapper .fa-solid.fa-user {
+  color: #624bff;
+}
+.user-info-table table tr:last-child {
+  border: none !important;
+}
+.nav-wrapper .menubar-wrapper .fa-solid.fa-bars {
+  color: #454f5b;
+}
+.dark-lt-ft {
+  color: #919eab;
+  cursor: pointer;
+}
+.dark-lt-ft.active-menu {
+  color: white !important;
+}
+.most-common-search {
+  width: 95%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 9px 3px rgba(0, 0, 0, 0.3);
+}
+.most-common-search-heading {
+  border-bottom: 1px solid lightgray;
+  padding: 15px 20px;
+  font-size: 24px;
+}
+.most-common-search table {
+  width: 100%;
+}
+.most-common-search table .tr-most-common td {
+  padding: 10px 20px;
+  max-width: 30%;
+  width: 100%;
+}
+.tr-most-common {
+  border-bottom: 1px solid lightgray;
+}
+.tr-most-common:last-child {
+  border: none;
+}
+.table-container {
+  width: 100%;
+}
+.extra-resp {
+  display: none;
+}
+.grid-child.particular-user-info table tr td ul .user-videourl-name {
+  cursor: pointer;
+}
+.logo-container-wr {
+  display: none;
+}
+.load-more-wrapper {
+  text-align: center;
+}
+.user-info-table .table-container .load-more-wrapper .btn-lg.load-more {
+  background: #e0dcfe !important;
+  border: none;
+  color: #624bff;
+  font-size: 16px;
+  margin: 10px;
+}
+.user-action-btn {
+  justify-content: space-between;
+}
+.user-action-btn .del-user-btn {
+  background: #e7a0a0;
+  outline: none;
+  color: #a30d0d;
+  border: none;
+}
+.total-video-name .table-container {
+  overflow: hidden;
+}
+.total-video-name .table-container table {
+  width: 100%;
+}
+.total-video-name .table-container table tr {
+  background: white;
+}
+.total-video-name .table-container table tr td {
+  padding: 20px;
+}
+.user-videourl-name,
+#info-container-totaluser,
+#info-container-totalvideo {
+  cursor: pointer;
+}
+@media only screen and (max-width: 991px) {
+  .first-container {
+    position: fixed;
+    height: 100%;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 0;
+    z-index: 99999;
+  }
+  .extra-resp {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: block;
+  }
+  .logo-wrapper-ad {
+    height: 100%;
+    background: #212b36;
+    padding: 10px 0px 0 30px;
+    width: 30%;
+  }
+  .logo-container-wr {
+    display: block;
+  }
+  .second-container {
+    width: 100%;
+  }
+  .table-container {
+    overflow-x: scroll;
+  }
+  .user-info-table table {
+    min-width: 850px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .user-info-containers {
+    flex-direction: column;
+  }
+  .info-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .logo-wrapper-ad {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 568px) {
+  .info-container {
+    width: 80%;
+  }
+  .logo-wrapper-ad {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .particular-tr {
+    padding: 20px 0;
+  }
+  .dark-ft {
+    min-width: 80px;
+    max-width: 80px;
+  }
+}
+.hidden-row {
+  display: none;
+}
+</style>
+  <body>
+    <div class="main-container">
+      <div class="first-container">
+        <div class="logo-wrapper-ad">
+          <div class="text-white ft-lg">AI.VIDEO</div>
+          <div class="side-bar-item-wrapper">
+            <div class="ft-md dark-lt-ft active-menu" id="dashboard-item">
+              Dashboard
+            </div>
+            <div class="ft-md dark-lt-ft" id="most-search">Most Search</div>
+            <div class="extra-resp"><i class="fa-solid fa-xmark"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="second-container">
+        <div class="nav-wrapper">
+          <div class="menubar-wrapper">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="logo-container-wr">AI.VIDEO</div>
+          <div class="profile-wrapper">
+            <i class="fa-solid fa-user"></i>
+            <div class="profile-dropdown">
+              <a href="{% url 'admin_logout' %}" class="logout-admin">Logout</a>
+            </div>
+          </div>
+        </div>
+        <div class="heading-wrapper">
+          <div class="text-white ft-lg">User Info</div>
+        </div>
+        <div class="user-info-containers">
+          <div class="info-container" id="info-container-totalvideo">
+            <div class="info-container-card">
+              <h3 class="ft-md">Total Video</h3>
+              <div class="icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="count-number">{{ total_video_count }}</div>
+          </div>
+          <div class="info-container" id="info-container-totaluser">
+            <div class="info-container-card">
+              <h3 class="ft-md">Total User</h3>
+              <div class="icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="count-number count-number-user">
+              {{ total_user_count }}
+            </div>
+          </div>
+          <div class="info-container">
+            <div class="info-container-card">
+              <h3 class="ft-md">Most search</h3>
+              <div class="icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  ></path>
+                  <path
+                    d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                  ></path>
+                  <path
+                    d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                  ></path>
+                  <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="count-number">{{ most_common_message }}</div>
+          </div>
+        </div>
+
+        <div class="total-video-name" style="display: none">
+          <h2 class="user-info-table-heading ft-md">Total Videos</h2>
+          <!-- <hr /> -->
+          <div class="table-container">
+            <table class="">
+              <tr class="border-line dark-ft">
+                <td>Prompt</td>
+                <td>Video Link</td>
+              </tr>
+              {% for total_video_name in video_name %}
+              <tr
+                data-user="user-{{ total_video_name.email }}"
+                class="border-line"
+                data-count="{{ forloop.counter }}"
+              >
+                <td>{{ total_video_name.message }}</td>
+
+                <td>
+                  <div
+                    class="user-videourl-name"
+                    data-videoUrl="{{ total_video_name.video_url }}"
+                  >
+                    Click here to see video
+                  </div>
+                </td>
+              </tr>
+
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+
+        <div class="user-info-table">
+          <h2 class="user-info-table-heading ft-md">User Information</h2>
+          <!-- <hr /> -->
+          <div class="table-container">
+            <table class="all-user-info">
+              <tr class="border-line dark-ft">
+                <td>User Name</td>
+                <td>Email ID</td>
+                <td>Total Videos</td>
+                <td>Detail</td>
+              </tr>
+              {% for user in users_with_video_count %}
+              <tr
+                data-user="user-{{ user.email }}"
+                class="border-line {% if forloop.counter > 2 %}hidden-row{% endif %}"
+                data-count="{{ forloop.counter }}"
+              >
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.video_count }}</td>
+                <td class="user-video-detail">
+                  <a href="#">Click here to get more details</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+            <div class="load-more-wrapper">
+              <button type="button" class="btn btn-dark btn-lg load-more">
+                Load More
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="grid-child particular-user-info" style="display: none">
+          <!-- <h4 class="user-info-table-heading ft-md">All Users Information</h4> -->
+          <table>
+            <!-- <tr class="particular-user-heading-main">
+              <td class="particular-user-heading particular-user-name-heading">
+                Name
+              </td>
+              <td class="particular-user-heading particular-user-email-heading">
+                Email
+              </td>
+              <td
+                class="particular-user-heading particular-user-password-heading"
+              >
+                Password
+              </td>
+              <td class="particular-user-heading particular-user-video-heading">
+                Total Videos
+              </td>
+              <td
+                class="particular-user-heading particular-user-prompt-heading"
+              >
+                Prompt Searched
+              </td>
+            </tr> -->
+            {% for user in users_with_video_count %}
+            <tr class="particular-tr" data-id="user-{{ user.email }}">
+              <td class="particular-user-value particular-user-pk">
+                <span class="dark-ft">User ID</span> {{ user.pk }}
+              </td>
+              <td class="particular-user-value particular-user-name">
+                <span class="dark-ft">Name</span> {{ user.name }}
+              </td>
+              <td class="particular-user-value particular-user-email">
+                <span class="dark-ft">Email ID</span> {{ user.email }}
+              </td>
+              <td class="particular-user-value particular-user-password">
+                <span class="dark-ft">Password</span> {{ user.pswd }}
+              </td>
+              <td class="particular-user-value particular-user-video">
+                <span class="dark-ft">Video Count</span> {{ user.video_count }}
+              </td>
+              <td class="particular-user-value particular-user-prompt">
+                <span class="dark-ft">Search</span>
+                <ul>
+                  {% for workspace in user.workspace_set.all %}
+                  <div
+                    class="user-videourl-name"
+                    data-videoUrl="{{ workspace.video_url }}"
+                  >
+                    {{ workspace.message }}
+                  </div>
+                  {% endfor %}
+                </ul>
+              </td>
+              <form method="post" action="{% url 'delete_entry' user.pk %}">
+                {% csrf_token %}
+                <td class="user-action-btn">
+                  <div class="all-user-click">Go to All User</div>
+                  <button
+                    type="submit"
+                    class="btn btn-outline-secondary del-user-btn"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </form>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div class="most-common-search" style="display: none">
+          <h2 class="most-common-search-heading">
+            Most Common Search by Users
+          </h2>
+          <table>
+            {% for item in most_common_messages %}
+            <tr class="tr-most-common">
+              <td>{{ item.message }}</td>
+              <td>{{ item.message_count }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      <div
+        class="grid-child modal fade"
+        id="videoModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="videoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="videoModalLabel">Video Popup</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <video controls autoplay style="width: 100%">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".total-user").click(function () {
+          $(".user-info-main").toggle();
+          $(".most-common-messages").toggle();
+          if ($(".particular-user-info").show()) {
+            $(".particular-user-info").hide();
+          }
+        });
+
+        $(".user-video-detail a").click(function (e) {
+          e.preventDefault();
+          var clickedUser = $(this).closest("tr").data("user");
+          $(".particular-user-info tr").hide();
+          $(".particular-user-info").show();
+          $(".particular-user-heading-main").show();
+          $(".table-container").hide();
+          $(".particular-user-info tr[data-id='" + clickedUser + "']").show();
+        });
+
+        $(".all-user-click").click(function () {
+          $(".particular-user-info").hide();
+          $(".table-container").show();
+        });
+
+        $("#info-container-totalvideo").click(function () {
+          $(".user-info-table").hide();
+          $(".total-video-name").show();
+          $(".total-video-name .table-container").show();
+          $(".grid-child.particular-user-info").hide();
+          $(".most-common-search").hide();
+        });
+
+        $("#info-container-totaluser").click(function () {
+          $(".user-info-table").show();
+          $(".user-info-table .table-container").show();
+          $(".total-video-name").hide();
+          $(".grid-child.particular-user-info").hide();
+          $(".most-common-search").hide();
+        });
+
+        $(".menubar-wrapper").click(function () {
+          $(".first-container").toggle();
+          if ($(".first-container").is(":visible")) {
+            $(".second-container").css("width", "");
+          } else {
+            $(".second-container").css("width", "100%");
+          }
+        });
+        $("#most-search").click(function () {
+          // Check window width
+          var windowWidth = $(window).width();
+
+          if (windowWidth < 991) {
+            $(".first-container").hide();
+          } else {
+            $(".first-container").show();
+          }
+
+          $(".most-common-search").show();
+          $(".user-info-table").hide();
+          $(".particular-user-info").hide();
+          $(".table-container").hide();
+          $(".total-video-name").hide();
+          $("#most-search").addClass("active-menu");
+          $("#dashboard-item").removeClass("active-menu");
+        });
+
+        $("#dashboard-item").click(function () {
+          // Check window width
+          var windowWidth = $(window).width();
+
+          if (windowWidth < 991) {
+            $(".first-container").hide();
+          } else {
+            $(".first-container").show();
+          }
+
+          $(".most-common-search").hide();
+          $(".user-info-table").show();
+          $(".table-container").show();
+          $("#most-search").removeClass("active-menu");
+          $("#dashboard-item").addClass("active-menu");
+        });
+
+        $(".extra-resp").click(function () {
+          $(".first-container").hide();
+        });
+        $(".profile-wrapper").click(function () {
+          $(".profile-dropdown").toggle();
+        });
+
+        var messageElements = $(".user-videourl-name");
+
+        // Add click event listener to each message element
+        messageElements.on("click", function () {
+          // Get the video_url associated with the clicked message
+          var videoUrl = $(this).attr("data-videoUrl");
+
+          // Open a Bootstrap modal and create a video element with autoplay
+          $("#videoModal").modal("show");
+          $("#videoModal video").attr("src", videoUrl);
+        });
+      });
+      $(document).ready(function () {
+        $(".load-more").on("click", function () {
+          $(".hidden-row").slice(0, 2).removeClass("hidden-row");
+          var usercount =
+            parseInt($(".count-number.count-number-user").text()) + 1;
+          var visibleRowCount = $(".all-user-info tr:not(.hidden-row)").length;
+          if (usercount <= visibleRowCount) {
+            $(".load-more").hide();
+          }
+        });
+        // Initially check if the button should be hidden
+        checkButtonVisibility();
+        // Function to check if the button should be hidden
+        function checkButtonVisibility() {
+          var usercount =
+            parseInt($(".count-number.count-number-user").text()) + 1;
+          var visibleRowCount = $(".all-user-info tr:not(.hidden-row)").length;
+          if (usercount <= visibleRowCount) {
+            $(".load-more").hide();
+          } else {
+            $(".load-more").show();
+          }
+        }
+      });
+      $(document).ready(function () {
+        $('#videoModal').on('hidden.bs.modal', function (e) {
+          $('#videoModal video').get(0).pause();
+        });
+      });
+    </script>
+  </body>
+</html>

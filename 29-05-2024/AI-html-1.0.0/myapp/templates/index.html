@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero Start -->
+<div class="container-fluid pt-5 hero-header mb-5">
+  <div class="container pt-5">
+    <div class="row g-5 pt-5">
+      <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+        <h1 class="text-white mb-4 animated text-center ctm-text">Generate videos through <span> text prompts</span></h1>
+        <p class="text-white text-center des">With AI.video as your assistant, it scripts, designs scenes, incorporates voice-overs, and fine-tunes the video according to your instructions, making audience engagement effortlessly easy!</p>
+        <div class="col-12 btn-wrapper-home">
+          <a href="{% if request.session.email %}{% url 'work_space' pk=user.pk %}{% else %}{% url 'login' %}{% endif %}" class="btn btn-light w-5 py-2" type="submit">Try AI Video</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video-wrapper"></div>
+</div>
+<!-- logo brand and review section -->
+<div class="logo-brand-container">
+  <div class="logo-brand-group">
+    <div class="logo-brand-wrapper">
+      <h1>7M</h1>
+      <div class="text-data">Customers</div>
+      <div class="text-data-country">190 <span class="text-inside-data-country">countries</span></div>
+    </div>
+    <div class="logo-brand-wrapper">
+      <div class="img-wrapper"><img src="{% static 'img/rating.svg' %}"></div>
+      <div class="text-data">Product of the month</div>
+      <div class="img-wrapper"><img src="{% static 'img/product-hunt.svg' %}"></div>
+    </div>
+    <div class="logo-brand-wrapper">
+      <h1>4.8</h1>
+      <span class="iv-achievement-ratings" style="--star-rating:4.8;--star-size:var(--rating-star-default-size);--star-background:var(--achievement-capterra);--star-mask:var(--achievement-capterra-mask)"></span>
+      <div class="img-wrapper"><img src="{% static 'img/captera.svg' %}"></div>
+    </div>
+    <div class="logo-brand-wrapper">
+      <h1>4.6</h1>
+      <span class="iv-achievement-ratings green" style="--star-rating:4.6;--star-size:var(--rating-star-default-size);--star-background:var(--achievement-trustpilot);--star-mask:var(--achievement-trustpilot-mask)"></span>
+      <div class="img-wrapper"><img src="{% static 'img/trustpilot.svg' %}"></div>
+    </div>
+    <div class="logo-brand-wrapper">
+      <h1>4.8</h1>
+      <span class="iv-achievement-ratings orange" style="--star-rating:4.8;--star-size:var(--rating-star-default-size);--star-background:var(--achievement-g2);--star-mask:var(--achievement-g2-mask)"></span>
+      <div class="img-wrapper"><img src="{% static 'img/grating.svg' %}"></div>
+    </div>
+  </div>
+</div>
+<!-- logo review section end -->
+<!-- image grid view -->
+<div>
+  <div class="image-grid-view">
+    <h1 class="ctm-text image-grid">Experience a unified video solution with <span>AI.video</span> at your fingertips </h1>
+  </div>
+</div>
+{% endblock %}

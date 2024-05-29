@@ -1,0 +1,218 @@
+.pricing-title-wrapper {
+  max-width: 80%;
+  width: 100%;
+  margin: 20px auto;
+}
+.sticky-top {
+  background-color: #fff;
+}
+.ft-s-ct {
+  font-size: 60px;
+  line-height: 60px;
+}
+.panel h1 {
+  color: black !important;
+}
+.panel h1 .sm-ft,
+.plan-short-detail {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(128, 128, 128);
+  min-height: 51px;
+}
+.pd-tp-bt {
+  padding-bottom: 45px;
+  padding-top: 45px;
+}
+.card-section-one {
+  padding: 40px;
+}
+.card-section-two {
+  background-color: rgb(237, 237, 237);
+  margin-bottom: -2px;
+}
+.card-section-two .card-section-two-wrapper p {
+  font-size: 14px;
+}
+.card-two .card-section-two .card-section-two-wrapper p,
+.card-three .card-section-two .card-section-two-wrapper p {
+  color: black;
+}
+.card-section-two-wrapper {
+  padding: 40px;
+}
+.card-one,
+.card-two,
+.card-three {
+  width: calc(100% / 3);
+  border: 1.5px solid rgba(234, 234, 234, 1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.plan-btn {
+  width: 100%;
+  padding: 15px 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  border: none;
+}
+.card-two .plan-btn {
+  background-color: rgb(15, 115, 255);
+}
+.card-three .plan-btn {
+  background-color: rgb(134, 16, 224);
+}
+.fa-solid.fa-check {
+  margin-right: 5px;
+  font-size: 18px;
+}
+.fa-solid.fa-xmark {
+  margin-right: 5px;
+  color: #bbb5b5;
+  font-size: 20px;
+}
+/* tab section*/
+.btn-wrapper-tab {
+  width: max-content;
+  margin: 0 auto;
+  background: #eee;
+  padding: 3px;
+  border-radius: 25px;
+}
+.btn-wrapper-tab label {
+  width: max-content;
+  border-radius: 20px;
+  padding: 10px 25px !important;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+}
+.worko-tabs {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 60px;
+
+  .state {
+    position: absolute;
+    left: -10000px;
+  }
+
+  .flex-tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .tab {
+      flex-grow: 1;
+      max-height: 40px;
+    }
+
+    .panel {
+      background-color: #fff;
+      padding: 20px;
+      min-height: 300px;
+      display: none;
+      width: 100%;
+      flex-basis: auto;
+    }
+  }
+
+  .tab {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    background-color: #eee;
+    cursor: hand;
+    cursor: pointer;
+    border-left: none;
+  }
+}
+
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label {
+  background-color: #fff;
+  cursor: default;
+  border: none;
+  /*border-left-color: /*#69be28*/
+}
+
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel {
+  display: flex;
+  gap: 45px;
+  margin-top: 40px;
+}
+
+.footer-logo-wrapper {
+  max-width: 150px;
+  width: 100%;
+  height: fit-content;
+}
+@media (max-width: 1100px) {
+  #tab-one:checked ~ .tabs #tab-one-panel,
+  #tab-two:checked ~ .tabs #tab-two-panel {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .card-one,
+  .card-two,
+  .card-three {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .card-section-one,
+  .card-section-two {
+    width: calc(100% / 2);
+  }
+  .ft-s-ct {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .card-one,
+  .card-two,
+  .card-three {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .card-one,
+  .card-two,
+  .card-three {
+    flex-direction: column;
+    width: 75%;
+  }
+  .card-section-one,
+  .card-section-two {
+    width: 100%;
+  }
+  .pd-tp-bt {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .panel h1 .sm-ft,
+  .plan-short-detail {
+    font-size: 15px;
+    min-height: unset;
+  }
+  .plan-btn {
+    font-size: 15px;
+  }
+  .ft-s-ct {
+    font-size: 34px;
+    line-height: 34px;
+  }
+}
+@media (max-width: 580px) {
+  .card-one,
+  .card-two,
+  .card-three {
+    width: 100%;
+  }
+}

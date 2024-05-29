@@ -1,0 +1,62 @@
+.container.home_msg {
+    width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    top: 20%;
+    padding: 50px 0;
+}
+
+.success-img-wrapper {
+    width: 100px;
+    height: 100px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.gree-ft {
+    color: green;
+    padding: 0;
+    margin: 0;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+.text-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 564px) {
+    .container.home_msg {
+        width: 90% !important;
+        padding: 56px 0;
+    }
+}
+
+.cancel-image-wrapper {
+    width: 100px;
+    height: 100px;
+}
+
+.red-ft {
+    color: red;
+    padding: 0;
+    margin: 0;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.cancel-msg {
+    font-size: 24px;
+}

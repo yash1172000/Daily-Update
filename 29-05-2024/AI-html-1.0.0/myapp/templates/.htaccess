@@ -1,5 +1,0 @@
-<IfModule mod_headers.c>
-    Header set Content-Security-Policy "frame-ancestors 'self' https://clipgenie.io"
-    Header always append X-Frame-Options "ALLOW-FROM https://clipgenie.io"
-</IfModule>
-
